@@ -21,9 +21,9 @@ class YOLOv3:
             return_dict=False
     ):
 
-        homedir = os.path.expanduser("~")
+        homedir = '/'
 
-        weights_path = os.path.join(homedir, '.torch/models/yolov3.weights')
+        weights_path = os.path.join(homedir, 'torch/models/yolov3.weights')
         os.makedirs(os.path.dirname(weights_path), exist_ok=True)
 
         if not os.path.isfile(weights_path):
@@ -31,7 +31,7 @@ class YOLOv3:
             outdir = os.path.dirname(weights_path)
             download_url(url, outdir)
 
-        model_def = os.path.join(homedir, '.torch/config/yolov3.cfg')
+        model_def = os.path.join(homedir, 'torch/config/yolov3.cfg')
         os.makedirs(os.path.dirname(model_def), exist_ok=True)
 
         if not os.path.isfile(model_def):
